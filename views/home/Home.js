@@ -1,6 +1,13 @@
+'use client';
+import { useTranslations } from 'next-intl';
+
 const Home = () => {
+    const t = useTranslations('main');
+
     return (
-        <div>Landing</div>
+        <>
+            <div>{t('title')}</div>
+        </>
     );
 };
 

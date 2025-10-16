@@ -1,0 +1,55 @@
+@use "@/project/styles/index" as *;
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 64px;
+    padding: 0.25rem 0;
+    background-color: $whiteColor;
+    z-index: 9;
+}
+
+.container {
+    @include containerMain;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.rowBetween {
+    justify-content: space-between;
+}
+
+.lineVertical {
+    height: 1.125rem;
+    width: 1px;
+    background-color: $greyColor;
+    margin: 0 1rem;
+}
+
+.menuBurger {
+    color: $darkColor;
+    stroke: $darkColor;
+    transition: all 0.3s;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: normal;
+
+    &:hover {
+        color: $greyDarkColor;
+        stroke: $greyDarkColor;
+    }
+}
+
+.menuBurgerSvg {
+    width: 1.125rem;
+    height: 1.125rem;
+    margin-left: 0.125rem;
+    stroke: inherit;
+}

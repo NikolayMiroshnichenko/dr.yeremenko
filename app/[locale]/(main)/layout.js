@@ -1,6 +1,6 @@
 import css from './layout.module.scss';
-import Header from "./components/header/Header";
-import Footer from "./components/footer/Footer";
+import Header from "@/components/layouts/main/header/Header";
+import Footer from "@/components/layouts/main/footer/Footer";
 
 export default function MainLayout({ children }) {
     return (

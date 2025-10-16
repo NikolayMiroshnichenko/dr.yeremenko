@@ -1,0 +1,11 @@
+{
+    "main": {
+        "title": "Olga"
+    },
+    "global": {
+        "ukrainian_language": "Ukrainian",
+        "ukrainian_language_short": "UA",
+        "english_language": "English",
+        "english_language_short": "EN"
+    }
+}
