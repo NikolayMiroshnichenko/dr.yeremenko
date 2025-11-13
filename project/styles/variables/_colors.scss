@@ -1,8 +1,10 @@
-$whiteColor: #ffffff;
+:root {
+    --whiteColor: #ffffff;
 
 
-$darkColor: #1A1A1A;
+    --darkColor: #1A1A1A;
 
-$greyDarkColor: #666666;
-$greyColor: #dcdcdc;
-$greyLightColor: #f3f3f3;
+    --greyDarkColor: #666666;
+    --greyColor: #dcdcdc;
+    --greyLightColor: #f3f3f3;
+}

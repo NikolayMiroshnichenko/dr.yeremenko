@@ -7,10 +7,11 @@
     left: 0;
     top: 0;
     width: 100%;
-    height: 64px;
     padding: 0.25rem 0;
-    background-color: $whiteColor;
+    background-color: var(--whiteColor);
     z-index: 9;
+    border-bottom: 1px solid var(--greyLightColor);
+    @include headerMainHeight;
 }
 
 .container {
@@ -29,21 +30,21 @@
 .lineVertical {
     height: 1.125rem;
     width: 1px;
-    background-color: $greyColor;
+    background-color: var(--greyColor);
     margin: 0 1rem;
 }
 
 .menuBurger {
-    color: $darkColor;
-    stroke: $darkColor;
+    color: var(--darkColor);
+    stroke: var(--darkColor);
     transition: all 0.3s;
     cursor: pointer;
     font-size: 1rem;
     font-weight: normal;
 
     &:hover {
-        color: $greyDarkColor;
-        stroke: $greyDarkColor;
+        color: var(--greyDarkColor);
+        stroke: var(--greyDarkColor);
     }
 }
 

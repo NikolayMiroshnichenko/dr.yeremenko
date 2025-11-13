@@ -1,0 +1,12 @@
+// Main layout
+@mixin headerMainHeight {
+    height: 64px;
+}
+
+@mixin contentMainLayoutPT {
+    padding-top: 64px;
+}
+
+@mixin contentMainPagePT {
+    padding-top: 2rem;
+}

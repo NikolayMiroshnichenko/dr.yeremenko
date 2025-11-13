@@ -1,0 +1,56 @@
+@use "@/project/styles/index" as *;
+
+.blockWrap {
+    margin-bottom: 1.5rem;
+}
+
+.blockTitle {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--darkColor);
+    line-height: 1.2;
+    color: var(--darkColor);
+    margin-bottom: 1rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+
+    @include max-lg {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include max-md {
+        grid-template-columns: 1fr;
+    }
+}
+
+.gridItem {
+    border: 1px solid var(--greyLightColor);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.gridItemBg {
+    width: 100%;
+    height: 160px;
+}
+
+.gridItemBottom {
+    padding: 1rem;
+}
+
+.gridItemText {
+    display: block;
+    font-size: 1rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    color: var(--darkColor);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
