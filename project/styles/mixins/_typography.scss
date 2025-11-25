@@ -1,0 +1,95 @@
+@use "../mixins/media" as *;
+
+@mixin heading($level: 1) {
+    @if $level ==1 {
+        font-size: 2.5rem;
+        font-weight: 500;
+        line-height: 1.15;
+
+        @include max-md {
+            font-size: 2rem;
+        }
+    }
+
+    @else if $level ==2 {
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 1.18;
+
+        @include max-md {
+            font-size: 1.625rem;
+        }
+    }
+
+    @else if $level ==3 {
+        font-size: 1.625rem;
+        font-weight: 500;
+        line-height: 1.2;
+
+        @include max-md {
+            font-size: 1.35rem;
+        }
+    }
+
+    @else if $level ==4 {
+        font-size: 1.25rem;
+        font-weight: 500;
+        line-height: 1.22;
+
+        @include max-md {
+            font-size: 1.1rem;
+        }
+    }
+
+    @else if $level ==5 {
+        font-size: 1.1rem;
+        font-weight: 500;
+        line-height: 1.25;
+
+        @include max-md {
+            font-size: 1rem;
+        }
+    }
+
+    @else if $level ==6 {
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.25;
+
+        @include max-md {
+            font-size: 0.95rem;
+        }
+    }
+}
+
+@mixin text-lg {
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--darkColor);
+
+    @include max-md {
+        font-size: 1.05rem;
+    }
+}
+
+@mixin text {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--darkColor);
+
+    @include max-md {
+        font-size: 0.95rem;
+    }
+}
+
+@mixin text-sm {
+    font-size: 0.85rem;
+    font-weight: 400;
+    line-height: 1.5;
+
+    @include max-md {
+        font-size: 0.8rem;
+    }
+}

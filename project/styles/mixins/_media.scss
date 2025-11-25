@@ -14,7 +14,7 @@ $breakpoints: (
 ) !default;
 
 @function getBr($size, $min: false) {
-    $breakpoint: map-get($breakpoints, $size);
+    $breakpoint: map.get($breakpoints, $size);
     @if $breakpoint {
         @if $min {
             @return ($breakpoint - 0.02);

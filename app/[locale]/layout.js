@@ -1,11 +1,11 @@
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
-import { Montserrat } from 'next/font/google'
+import { Raleway } from 'next/font/google'
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { getLocale } from 'next-intl/server';
 import "@/project/styles/globals.scss";
 
-const montserrat = Montserrat({
+const raleway = Raleway({
   weight: ['400', '500', '700'],
   subsets: ['latin', 'cyrillic'],
   style: ['normal', 'italic'],
@@ -26,7 +26,7 @@ export default async function RootLayout({ children, params }) {
 
   return (
     <html lang={locale}>
-      <body className={montserrat.className}>
+      <body className={raleway.className}>
         <NextIntlClientProvider>
           {children}
         </NextIntlClientProvider>

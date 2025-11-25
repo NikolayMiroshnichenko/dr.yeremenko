@@ -1,0 +1,14 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.buttonWrapper {
+    margin-right: 0.25rem;
+    margin-bottom: 0.25rem;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}

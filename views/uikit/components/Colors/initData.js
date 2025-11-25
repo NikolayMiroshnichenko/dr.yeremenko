@@ -1,4 +1,22 @@
 export const colorsData = {
+
+    brand: [
+        {
+            title: 'brandColorDark'
+        },
+        {
+            title: 'brandColor'
+        },
+        {
+            title: 'brandColorLight'
+        },
+        {
+            title: 'brandColorLight_50'
+        },
+        {
+            title: 'brandColorLight_30'
+        }
+    ],
     dark: [
         {
             title: 'darkColor',
