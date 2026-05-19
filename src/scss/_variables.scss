@@ -1,0 +1,27 @@
+// ─── Colors ───────────────────────────────────────────────────────────────────
+$color-bg:            #fbf7f4;
+$color-bg-section:    #f5ede3;
+$color-bg-photo:      #e8d5c4;
+$color-bg-dark:       #3d2c2c;
+$color-accent:        #c4857a;
+$color-accent-light:  #efd8d4;
+$color-text-dark:     #3d2c2c;
+$color-text-medium:   #7a6060;
+$color-text-light:    #e8d5c4;
+$color-divider:       #e8d5c4;
+$color-white:         #ffffff;
+
+// ─── Typography ───────────────────────────────────────────────────────────────
+$font-primary:   'Montserrat', sans-serif;
+$font-secondary: 'Montserrat', sans-serif;
+
+// ─── Breakpoints ──────────────────────────────────────────────────────────────
+$bp-mobile:  480px;
+$bp-tablet:  768px;
+$bp-desktop: 1024px;
+$bp-wide:    1280px;
+
+// ─── Container ────────────────────────────────────────────────────────────────
+$container-padding-desktop: 100px;
+$container-padding-tablet:  40px;
+$container-padding-mobile:  20px;

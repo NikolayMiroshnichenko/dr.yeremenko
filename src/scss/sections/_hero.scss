@@ -1,0 +1,236 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.hero {
+  position: relative;
+  min-height: 880px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+
+  @include respond-to('desktop') {
+    min-height: auto;
+    flex-direction: column;
+    padding-bottom: 60px;
+  }
+
+  // Photo block — absolute, bleeds to the right edge
+  &__photo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: $color-bg-photo;
+    border-radius: 56px 0 0 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    @include respond-to('desktop') {
+      position: relative;
+      width: 100%;
+      height: 320px;
+      border-radius: 16px;
+      order: -1;
+      flex-shrink: 0;
+    }
+
+    @include respond-to('tablet') {
+      height: 260px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__photo-placeholder {
+    font-family: $font-primary;
+    font-weight: 300;
+    font-size: 1rem;
+    color: $color-text-medium;
+    opacity: 0.7;
+  }
+
+  // Container sits on top of the photo (z-index)
+  .container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+
+    @include respond-to('desktop') {
+      order: 1;
+    }
+  }
+
+  &__content {
+    max-width: 540px;
+    padding-top: 120px;
+    padding-bottom: 100px;
+
+    @include respond-to('desktop') {
+      max-width: 100%;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 14px;
+    background-color: $color-accent-light;
+    border-radius: 6px;
+    font-family: $font-primary;
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: $color-accent;
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    font-family: $font-primary;
+    font-weight: 700;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    color: $color-text-dark;
+    margin-bottom: 28px;
+
+    @include respond-to('desktop') {
+      font-size: 2.75rem;
+    }
+
+    @include respond-to('tablet') {
+      font-size: 2.25rem;
+    }
+
+    @include respond-to('mobile') {
+      font-size: 1.875rem;
+    }
+  }
+
+  &__divider {
+    @include accent-line;
+    margin-bottom: 20px;
+  }
+
+  &__desc {
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: $color-text-medium;
+    max-width: 460px;
+    margin-bottom: 48px;
+
+    @include respond-to('tablet') {
+      font-size: 0.9375rem;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 56px;
+    flex-wrap: wrap;
+  }
+
+  &__btn-primary {
+    @include btn-base;
+    padding: 17px 40px;
+    background-color: $color-accent;
+    color: $color-white;
+    font-size: 0.9375rem;
+    border-radius: 50px;
+    box-shadow: 0 8px 20px rgba($color-accent, 0.25);
+  }
+
+  &__btn-outline {
+    @include btn-base;
+    padding: 16px 32px;
+    border: 1.5px solid $color-accent;
+    color: $color-accent;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    border-radius: 50px;
+    background: transparent;
+
+    &:hover {
+      background-color: $color-accent-light;
+    }
+  }
+
+  &__stats {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  &__stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  &__stat-value {
+    font-family: $font-primary;
+    font-weight: 700;
+    font-size: 1.875rem;
+    color: $color-accent;
+    white-space: nowrap;
+  }
+
+  &__stat-label {
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: $color-text-medium;
+  }
+
+  &__stat-divider {
+    width: 1px;
+    height: 48px;
+    background-color: $color-divider;
+    flex-shrink: 0;
+  }
+
+  // Decorative circles
+  &__deco {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+
+    &--sm {
+      width: 40px;
+      height: 40px;
+      background-color: $color-accent-light;
+      top: 210px;
+      left: calc(50% - 16px);
+      opacity: 0.6;
+      z-index: 2;
+
+      @include respond-to('desktop') {
+        display: none;
+      }
+    }
+
+    &--md {
+      width: 96px;
+      height: 96px;
+      background-color: $color-bg-photo;
+      bottom: 180px;
+      left: calc(50% - 112px);
+      opacity: 0.5;
+      z-index: 0;
+
+      @include respond-to('desktop') {
+        display: none;
+      }
+    }
+  }
+}

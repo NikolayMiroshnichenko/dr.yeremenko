@@ -1,0 +1,192 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.footer {
+  background-color: $color-bg-dark;
+  padding: 60px 0 40px;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 260px 160px 280px 260px;
+    gap: 40px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba($color-text-medium, 0.3);
+    margin-bottom: 28px;
+
+    @include respond-to('desktop') {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include respond-to('tablet') {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+
+  // Col 1 — Brand
+  &__brand {}
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  &__logo-icon {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__logo-text {
+    font-family: $font-primary;
+    font-weight: 800;
+    font-size: 0.875rem;
+    letter-spacing: 2.5px;
+    color: $color-white;
+  }
+
+  &__tagline {
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 0.8125rem;
+    color: $color-divider;
+    margin-bottom: 12px;
+  }
+
+  &__brand-desc {
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 0.8125rem;
+    color: $color-text-medium;
+    line-height: 1.55;
+    max-width: 220px;
+  }
+
+  // Col 2 — Menu
+  &__nav-title,
+  &__contacts-title,
+  &__social-title {
+    font-family: $font-primary;
+    font-weight: 700;
+    font-size: 0.6875rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $color-accent;
+    margin-bottom: 16px;
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__nav-link {
+    font-family: $font-primary;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: $color-text-light;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  // Col 3 — Contacts
+  &__phone {
+    font-family: $font-primary;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: $color-white;
+    display: block;
+    margin-bottom: 8px;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  &__email {
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 0.8125rem;
+    color: $color-divider;
+    display: block;
+    margin-top: 8px;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  // Col 4 — Social
+  &__social-icons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  &__social-link {
+    width: 44px;
+    height: 44px;
+    border: 1px solid $color-text-medium;
+    border-radius: 10px;
+    @include flex-center;
+    font-family: $font-primary;
+    font-weight: 700;
+    font-size: 0.75rem;
+    color: $color-text-light;
+    transition: border-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      border-color: $color-accent;
+      color: $color-accent;
+    }
+  }
+
+  &__social-desc {
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: $color-text-medium;
+    line-height: 1.45;
+    max-width: 220px;
+  }
+
+  // Bottom bar
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include respond-to('tablet') {
+      flex-direction: column;
+      gap: 8px;
+      text-align: center;
+    }
+  }
+
+  &__copy {
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: $color-text-medium;
+  }
+
+  &__dev {
+    font-family: $font-primary;
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: $color-accent;
+  }
+}

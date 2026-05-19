@@ -1,0 +1,185 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.services {
+  background-color: $color-bg-section;
+  padding: 80px 0 100px;
+
+  &__label {
+    @include section-label;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-family: $font-primary;
+    font-weight: 700;
+    font-size: 3rem;
+    color: $color-text-dark;
+    margin-bottom: 0;
+
+    @include respond-to('tablet') {
+      font-size: 2.25rem;
+    }
+
+    @include respond-to('mobile') {
+      font-size: 1.75rem;
+    }
+  }
+
+  &__divider {
+    @include accent-line;
+    margin-bottom: 36px;
+  }
+
+  // Bento grid — row 1: wide + small + small
+  &__grid {
+    display: grid;
+    gap: 20px;
+  }
+
+  &__row {
+    display: grid;
+    gap: 20px;
+
+    &--1 {
+      grid-template-columns: 2fr 1fr 1fr;
+
+      @include respond-to('desktop') {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @include respond-to('tablet') {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &--2 {
+      grid-template-columns: 1fr 2fr 1fr;
+
+      @include respond-to('desktop') {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @include respond-to('tablet') {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &--3 {
+      grid-template-columns: repeat(4, 1fr);
+
+      @include respond-to('desktop') {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include respond-to('tablet') {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}
+
+// ─── Service card ─────────────────────────────────────────────────────────────
+.service-card {
+  position: relative;
+  border-radius: 16px;
+  padding: 36px 28px 28px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 228px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba($color-text-dark, 0.07);
+  }
+
+  &--peach {
+    background-color: $color-accent-light;
+  }
+
+  &--white {
+    background-color: $color-white;
+  }
+
+  &--cream {
+    background-color: $color-bg;
+  }
+
+  &--tall {
+    min-height: 228px;
+  }
+
+  &--short {
+    min-height: 188px;
+  }
+
+  &__number {
+    position: absolute;
+    top: -8px;
+    right: 16px;
+    font-family: $font-secondary;
+    font-weight: 700;
+    font-size: 5rem;
+    color: $color-divider;
+    opacity: 0.55;
+    line-height: 1;
+    pointer-events: none;
+
+    &--sm {
+      font-size: 4rem;
+    }
+  }
+
+  &__icon {
+    font-size: 1.25rem;
+    color: $color-accent;
+    margin-bottom: 18px;
+    line-height: 1;
+    width: 24px;
+    height: 24px;
+    @include flex-center;
+  }
+
+  &__title {
+    font-family: $font-primary;
+    font-weight: 700;
+    font-size: 1.0625rem;
+    line-height: 1.3;
+    color: $color-text-dark;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+
+    &--sm {
+      font-size: 0.875rem;
+    }
+  }
+
+  &__desc {
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 1.45;
+    color: $color-text-medium;
+    position: relative;
+    z-index: 1;
+    flex: 1;
+  }
+
+  &__link {
+    font-family: $font-primary;
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: $color-accent;
+    margin-top: auto;
+    padding-top: 12px;
+    display: inline-block;
+    transition: gap 0.2s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

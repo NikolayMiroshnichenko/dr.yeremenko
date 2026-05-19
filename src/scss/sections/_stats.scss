@@ -1,0 +1,94 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.stats {
+  background-color: $color-bg-dark;
+  padding: 80px 0;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+
+    @include respond-to('desktop') {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    @include respond-to('mobile') {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+
+    // Vertical divider between items (except last)
+    &:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 100px;
+      background-color: rgba($color-text-medium, 0.35);
+
+      @include respond-to('desktop') {
+        display: none;
+      }
+    }
+  }
+
+  &__icon-wrap {
+    position: relative;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 24px;
+  }
+
+  &__icon-bg {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: rgba($color-text-medium, 0.18);
+  }
+
+  &__icon-symbol {
+    position: absolute;
+    inset: 0;
+    @include flex-center;
+    font-size: 1.375rem;
+    color: $color-accent;
+    line-height: 1;
+  }
+
+  &__value {
+    font-family: $font-secondary;
+    font-weight: 700;
+    font-size: 3.25rem;
+    color: $color-accent-light;
+    line-height: 1;
+    margin-bottom: 16px;
+
+    @include respond-to('tablet') {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__label {
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 0.8125rem;
+    color: $color-divider;
+    line-height: 1.45;
+    text-align: center;
+  }
+}
