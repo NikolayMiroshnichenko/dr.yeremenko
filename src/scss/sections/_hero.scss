@@ -177,7 +177,13 @@
   &__stats {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 32px;
+    row-gap: 16px;
+
+    @include respond-to('mobile') {
+      gap: 20px;
+    }
   }
 
   &__stat {
@@ -192,6 +198,10 @@
     font-size: 1.875rem;
     color: $color-accent;
     white-space: nowrap;
+
+    @include respond-to('mobile') {
+      font-size: 1.5rem;
+    }
   }
 
   &__stat-label {
@@ -199,6 +209,10 @@
     font-weight: 400;
     font-size: 0.75rem;
     color: $color-text-medium;
+
+    @include respond-to('mobile') {
+      font-size: 0.6875rem;
+    }
   }
 
   &__stat-divider {
@@ -206,6 +220,12 @@
     height: 48px;
     background-color: $color-divider;
     flex-shrink: 0;
+
+    // Hidden at the narrowest widths — with flex-wrap enabled a leftover
+    // divider would land alone on its own line if the row wraps.
+    @include respond-to('mobile') {
+      display: none;
+    }
   }
 
   // Decorative circles

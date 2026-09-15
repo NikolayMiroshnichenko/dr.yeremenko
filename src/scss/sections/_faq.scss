@@ -1,0 +1,239 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.faq {
+  position: relative;
+  background-color: $color-bg-section;
+  padding: 100px 0;
+  overflow: hidden;
+
+  @include respond-to('desktop') {
+    padding: 70px 0;
+  }
+
+  @include respond-to('tablet') {
+    padding: 56px 0;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 64px;
+    align-items: start;
+
+    @include respond-to('desktop') {
+      grid-template-columns: 300px 1fr;
+      gap: 40px;
+    }
+
+    @include respond-to('tablet') {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+
+  &__heading {
+    position: sticky;
+    top: 100px;
+
+    @include respond-to('tablet') {
+      position: static;
+    }
+  }
+
+  &__label {
+    @include section-label;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-family: $font-primary;
+    font-weight: 700;
+    font-size: 2.75rem;
+    line-height: 1.15;
+    color: $color-text-dark;
+    margin-bottom: 20px;
+
+    @include respond-to('desktop') {
+      font-size: 2.25rem;
+    }
+
+    @include respond-to('tablet') {
+      font-size: 1.875rem;
+    }
+
+    @include respond-to('mobile') {
+      font-size: 1.625rem;
+    }
+  }
+
+  &__divider {
+    @include accent-line;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  &__desc {
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: $color-text-medium;
+    max-width: 320px;
+
+    @include respond-to('tablet') {
+      font-size: 0.9375rem;
+      max-width: 100%;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 0;
+  }
+
+  // Decorative circles (same language as .hero__deco)
+  &__deco {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+
+    &--sm {
+      width: 64px;
+      height: 64px;
+      background-color: $color-accent-light;
+      top: 64px;
+      right: 6%;
+      opacity: 0.6;
+
+      @include respond-to('desktop') {
+        display: none;
+      }
+    }
+
+    &--md {
+      width: 140px;
+      height: 140px;
+      background-color: $color-bg-photo;
+      bottom: 48px;
+      left: 4%;
+      opacity: 0.45;
+
+      @include respond-to('desktop') {
+        display: none;
+      }
+    }
+  }
+}
+
+// ─── FAQ accordion item ─────────────────────────────────────────────────────
+.faq-item {
+  background-color: $color-white;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+
+  &.is-active {
+    box-shadow: 0 8px 24px rgba($color-text-dark, 0.07);
+  }
+
+  &__question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 24px 28px;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-family: $font-primary;
+    font-weight: 600;
+    font-size: 1.0625rem;
+    line-height: 1.4;
+    color: $color-text-dark;
+
+    @include respond-to('tablet') {
+      padding: 18px 20px;
+      font-size: 0.9375rem;
+      gap: 14px;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: $color-accent-light;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background-color: $color-accent;
+      border-radius: 1px;
+      transition: transform 0.3s ease;
+    }
+
+    &::before {
+      width: 12px;
+      height: 2px;
+      transform: translate(-50%, -50%);
+    }
+
+    &::after {
+      width: 2px;
+      height: 12px;
+      transform: translate(-50%, -50%);
+    }
+
+    @include respond-to('tablet') {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &.is-active &__icon::after {
+    transform: translate(-50%, -50%) scaleY(0);
+  }
+
+  // Grid-rows trick keeps the accordion smooth without measuring
+  // heights in JS, so it stays correct at every viewport width.
+  &__answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s ease;
+  }
+
+  &.is-active &__answer {
+    grid-template-rows: 1fr;
+  }
+
+  &__answer-inner {
+    overflow: hidden;
+  }
+
+  &__answer-text {
+    padding: 0 28px 24px;
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: $color-text-medium;
+
+    @include respond-to('tablet') {
+      padding: 0 20px 18px;
+      font-size: 0.875rem;
+    }
+  }
+}

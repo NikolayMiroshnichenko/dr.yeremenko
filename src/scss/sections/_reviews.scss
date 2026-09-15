@@ -1,0 +1,266 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.reviews {
+  position: relative;
+  background-color: $color-bg-section;
+  padding: 100px 0;
+  overflow: hidden;
+
+  @include respond-to('desktop') {
+    padding: 70px 0;
+  }
+
+  @include respond-to('tablet') {
+    padding: 56px 0;
+  }
+
+  &__head {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 48px;
+
+    @include respond-to('tablet') {
+      align-items: flex-start;
+      margin-bottom: 32px;
+    }
+
+    @include respond-to('mobile') {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  &__heading {
+    max-width: 560px;
+  }
+
+  &__label {
+    @include section-label;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-family: $font-primary;
+    font-weight: 700;
+    font-size: 2.75rem;
+    line-height: 1.15;
+    color: $color-text-dark;
+    margin-bottom: 20px;
+
+    @include respond-to('desktop') {
+      font-size: 2.25rem;
+    }
+
+    @include respond-to('tablet') {
+      font-size: 1.875rem;
+    }
+
+    @include respond-to('mobile') {
+      font-size: 1.625rem;
+    }
+  }
+
+  &__divider {
+    @include accent-line;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  &__desc {
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: $color-text-medium;
+
+    @include respond-to('tablet') {
+      font-size: 0.9375rem;
+    }
+  }
+
+  // ─── Arrow controls ──────────────────────────────────────────────────────
+  &__arrows {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  &__arrow {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 1.5px solid $color-accent;
+    background-color: transparent;
+    color: $color-accent;
+    cursor: pointer;
+    @include flex-center;
+    transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    &:hover {
+      background-color: $color-accent;
+      color: $color-white;
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0.35;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    @include respond-to('mobile') {
+      width: 44px;
+      height: 44px;
+    }
+  }
+
+  // ─── Slider ──────────────────────────────────────────────────────────────
+  &__slider-wrap {
+    position: relative;
+  }
+
+  &__slider {
+    position: relative;
+    z-index: 1;
+    // Padding gives the hover-lift shadow room so it isn't clipped by
+    // Swiper's own overflow:hidden.
+    padding: 10px 2px 24px;
+  }
+
+  // ─── Decorative circles ──────────────────────────────────────────────────
+  &__deco {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+
+    &--sm {
+      width: 56px;
+      height: 56px;
+      background-color: $color-accent-light;
+      top: 30px;
+      right: 10%;
+      opacity: 0.6;
+
+      @include respond-to('desktop') {
+        display: none;
+      }
+    }
+
+    &--md {
+      width: 130px;
+      height: 130px;
+      background-color: $color-bg-photo;
+      bottom: 10px;
+      left: 5%;
+      opacity: 0.45;
+
+      @include respond-to('desktop') {
+        display: none;
+      }
+    }
+  }
+}
+
+// ─── Review card ─────────────────────────────────────────────────────────
+.review-card {
+  position: relative;
+  height: 100%;
+  background-color: $color-white;
+  border-radius: 20px;
+  padding: 32px 28px 28px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba($color-text-dark, 0.1);
+  }
+
+  &:hover &__zoom {
+    background-color: $color-accent;
+    color: $color-white;
+  }
+
+  &__zoom {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: $color-accent-light;
+    color: $color-accent;
+    @include flex-center;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-right: 40px;
+    margin-bottom: 18px;
+  }
+
+  &__avatar {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: $color-accent-light;
+    color: $color-accent;
+    font-family: $font-primary;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    @include flex-center;
+  }
+
+  &__name {
+    font-family: $font-primary;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    color: $color-text-dark;
+    margin-bottom: 4px;
+  }
+
+  &__stars {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: $color-accent;
+    line-height: 1;
+  }
+
+  &__text {
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: $color-text-medium;
+    margin-bottom: 20px;
+  }
+
+  &__hint {
+    display: inline-flex;
+    align-items: center;
+    font-family: $font-primary;
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: $color-accent;
+  }
+}
