@@ -6,3 +6,4 @@ import './js/year.js';
 import './js/reviews-slider.js';
 import './js/services-modal.js';
 import './js/header-menu.js';
+import './js/symptoms-reveal.js';
