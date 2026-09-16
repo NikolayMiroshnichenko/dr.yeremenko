@@ -108,21 +108,6 @@
     color: $color-accent;
   }
 
-  &__location {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    font-family: $font-primary;
-    font-weight: 500;
-    font-size: 0.8125rem;
-    color: $color-text-medium;
-
-    svg {
-      color: $color-accent;
-      flex-shrink: 0;
-    }
-  }
-
   &__title {
     font-family: $font-primary;
     font-weight: 700;
@@ -167,7 +152,7 @@
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-bottom: 56px;
+    margin-bottom: 40px;
     flex-wrap: wrap;
   }
 
@@ -179,21 +164,6 @@
     font-size: 0.9375rem;
     border-radius: 50px;
     box-shadow: 0 8px 20px rgba($color-accent, 0.25);
-  }
-
-  &__btn-outline {
-    @include btn-base;
-    padding: 16px 32px;
-    border: 1.5px solid $color-accent;
-    color: $color-accent;
-    font-weight: 600;
-    font-size: 0.9375rem;
-    border-radius: 50px;
-    background: transparent;
-
-    &:hover {
-      background-color: $color-accent-light;
-    }
   }
 
   &__stats {
