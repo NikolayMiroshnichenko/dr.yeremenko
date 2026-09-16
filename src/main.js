@@ -4,3 +4,5 @@ import './scss/main.scss';
 import './js/faq.js';
 import './js/year.js';
 import './js/reviews-slider.js';
+import './js/services-modal.js';
+import './js/header-menu.js';

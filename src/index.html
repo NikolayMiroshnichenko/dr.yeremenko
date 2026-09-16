@@ -4,11 +4,63 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Лікар-гінеколог та мамолог. Більше 10 років досвіду. Запис на прийом онлайн." />
-    <title>DR.YEREMENKO — Гінеколог · Мамолог</title>
+
+    <title>Ольга Єременко — гінеколог, мамолог у Чернігові | Онлайн консультації</title>
+    <meta name="description" content="Лікар гінеколог, мамолог та УЗД-фахівець Ольга Єременко у Чернігові. 20+ років досвіду, очний прийом у Чернігові та онлайн-консультації для жінок з усієї України і за кордоном." />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Ольга Єременко" />
+    <meta name="geo.region" content="UA-74" />
+    <meta name="geo.placename" content="Чернігів" />
+    <link rel="canonical" href="https://nikolaymiroshnichenko.github.io/dr.yeremenko/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="uk_UA" />
+    <meta property="og:site_name" content="Dr. Yeremenko" />
+    <meta property="og:title" content="Ольга Єременко — гінеколог, мамолог у Чернігові" />
+    <meta property="og:description" content="Лікар гінеколог, мамолог та УЗД-фахівець у Чернігові. 20+ років досвіду, очні та онлайн-консультації для жінок з усієї України і за кордоном." />
+    <meta property="og:url" content="https://nikolaymiroshnichenko.github.io/dr.yeremenko/" />
+    <meta property="og:image" content="https://nikolaymiroshnichenko.github.io/dr.yeremenko/og-image.png" />
+    <meta property="og:image:alt" content="Ольга Єременко — лікар гінеколог, мамолог у Чернігові" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ольга Єременко — гінеколог, мамолог у Чернігові" />
+    <meta name="twitter:description" content="Лікар гінеколог, мамолог та УЗД-фахівець у Чернігові. 20+ років досвіду, очні та онлайн-консультації." />
+    <meta name="twitter:image" content="https://nikolaymiroshnichenko.github.io/dr.yeremenko/og-image.png" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Structured data: local medical business in Chernihiv -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Physician",
+        "name": "Ольга Іванівна Єременко",
+        "alternateName": "Dr. Yeremenko",
+        "description": "Лікар гінеколог, мамолог та УЗД-фахівець у Чернігові. 20+ років досвіду, очні та онлайн-консультації для жінок з усієї України та за кордоном.",
+        "image": "https://nikolaymiroshnichenko.github.io/dr.yeremenko/og-image.png",
+        "url": "https://nikolaymiroshnichenko.github.io/dr.yeremenko/",
+        "telephone": "+380503252067",
+        "medicalSpecialty": ["Gynecologic", "Endocrine"],
+        "knowsLanguage": ["uk", "ru"],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Чернігів",
+          "addressRegion": "Чернігівська область",
+          "addressCountry": "UA"
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Чернігів" },
+          { "@type": "Country", "name": "Україна" }
+        ],
+        "priceRange": "від 600 UAH",
+        "sameAs": ["https://t.me/+380503252067"]
+      }
+    </script>
+
     <script type="module" src="./main.js"></script>
   </head>
   <body>
@@ -18,8 +70,11 @@
     <main>
       <load src="./partials/hero.html" />
       <load src="./partials/stats.html" />
+      <load src="./partials/symptoms.html" />
       <load src="./partials/services.html" />
       <load src="./partials/about.html" />
+      <load src="./partials/credentials.html" />
+      <load src="./partials/consultation.html" />
       <load src="./partials/reviews.html" />
       <load src="./partials/faq.html" />
     </main>

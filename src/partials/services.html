@@ -1,7 +1,7 @@
 <section class="services" id="services">
   <div class="container">
 
-    <p class="services__label">Мої послуги</p>
+    <p class="services__label">Моя спеціалізація</p>
     <h2 class="services__title">Чим можу допомогти</h2>
     <span class="services__divider"></span>
 
@@ -10,104 +10,163 @@
       <!-- Row 1: wide + small + small -->
       <div class="services__row services__row--1">
 
-        <div class="service-card service-card--peach service-card--tall">
+        <div
+          class="service-card service-card--peach service-card--tall"
+          data-service
+          data-title="Ендокринна гінекологія"
+          data-desc="Своєчасне виявлення гормональних причин порушень циклу та підбір індивідуальної терапії."
+          data-points="Сильні менструальні болі та порушення менструального циклу|Рясні та тривалі менструальні кровотечі|ПМС, висипання на обличчі, порушення сну і перепади настрою|Випадіння волосся: чи пов'язане з гінекологією?|Затримка місячних та позитивний тест на вагітність: що робити далі?"
+        >
           <span class="service-card__number">01</span>
           <span class="service-card__icon">
-            <!-- Іконка: місце для вашої SVG іконки -->
             <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="7" cy="6" r="5" stroke="#c4857a" stroke-width="1.5"/>
-              <path d="M7 11v6M4 14h6" stroke="#c4857a" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="7" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M7 11v6M4 14h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
           </span>
-          <h3 class="service-card__title">Гінекологічний огляд</h3>
-          <p class="service-card__desc">Комплексний огляд із консультацією та анамнезом</p>
-          <a href="#" class="service-card__link">Детальніше →</a>
+          <h3 class="service-card__title">Ендокринна гінекологія</h3>
+          <p class="service-card__desc">Порушення менструального циклу, сильні кровотечі та гормональні збої</p>
+          <button type="button" class="service-card__link" data-service-trigger>Детальніше →</button>
         </div>
 
-        <div class="service-card service-card--white service-card--tall">
+        <div
+          class="service-card service-card--white service-card--tall"
+          data-service
+          data-title="Мамологія"
+          data-desc="Комплексна оцінка стану молочних залоз та своєчасне виявлення патологій."
+          data-points="Болі в молочних залозах та ущільнення|Виділення з молочних залоз, особливо кров'янисті|Почервоніння шкіри молочної залози (мастит, запальний інфільтрат)|Збільшення пахових лімфовузлів"
+        >
           <span class="service-card__number service-card__number--sm">02</span>
-          <span class="service-card__icon">◉</span>
-          <h3 class="service-card__title service-card__title--sm">УЗД органів малого тазу</h3>
-          <p class="service-card__desc">Ультразвукова діагностика на сучасному обладнанні</p>
-          <a href="#" class="service-card__link">Детальніше →</a>
+          <span class="service-card__icon">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z"/>
+            </svg>
+          </span>
+          <h3 class="service-card__title service-card__title--sm">Мамологія</h3>
+          <p class="service-card__desc">Огляд, діагностика та лікування захворювань молочної залози</p>
+          <button type="button" class="service-card__link" data-service-trigger>Детальніше →</button>
         </div>
 
-        <div class="service-card service-card--cream service-card--tall">
+        <div
+          class="service-card service-card--cream service-card--tall"
+          data-service
+          data-title="Ультразвукова діагностика"
+          data-desc="Точна візуалізація для встановлення діагнозу та контролю лікування."
+          data-points="УЗД органів малого таза|УЗД молочних залоз|Обстеження молочної залози: коли і кому потрібно починати та як часто його проводити?"
+        >
           <span class="service-card__number service-card__number--sm">03</span>
-          <span class="service-card__icon">♡</span>
-          <h3 class="service-card__title service-card__title--sm">Мамологічний огляд</h3>
-          <p class="service-card__desc">Ранній скринінг та виявлення патологій</p>
-          <a href="#" class="service-card__link">Детальніше →</a>
+          <span class="service-card__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M12 12h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M8.5 8.5a5 5 0 0 1 0 7M15.5 8.5a5 5 0 0 1 0 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M5.5 5.5a9.5 9.5 0 0 1 0 13M18.5 5.5a9.5 9.5 0 0 1 0 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <h3 class="service-card__title service-card__title--sm">УЗД діагностика</h3>
+          <p class="service-card__desc">УЗД органів малого таза та молочних залоз</p>
+          <button type="button" class="service-card__link" data-service-trigger>Детальніше →</button>
         </div>
 
       </div>
 
-      <!-- Row 2: small + wide + small -->
-      <div class="services__row services__row--2">
-
-        <div class="service-card service-card--cream service-card--tall">
-          <span class="service-card__number service-card__number--sm">04</span>
-          <span class="service-card__icon">✿</span>
-          <h3 class="service-card__title service-card__title--sm">Планування вагітності</h3>
-          <p class="service-card__desc">Підготовка організму та підбір терапії</p>
-          <a href="#" class="service-card__link">Детальніше →</a>
-        </div>
-
-        <div class="service-card service-card--peach service-card--tall">
-          <span class="service-card__number">05</span>
-          <span class="service-card__icon">◈</span>
-          <h3 class="service-card__title">УЗД молочних залоз</h3>
-          <p class="service-card__desc">Точна візуалізація та діагностика</p>
-          <a href="#" class="service-card__link">Детальніше →</a>
-        </div>
-
-        <div class="service-card service-card--white service-card--tall">
-          <span class="service-card__number service-card__number--sm">06</span>
-          <span class="service-card__icon">☽</span>
-          <h3 class="service-card__title service-card__title--sm">Ведення вагітності</h3>
-          <p class="service-card__desc">Підтримка та медичний супровід на кожному етапі</p>
-          <a href="#" class="service-card__link">Детальніше →</a>
-        </div>
-
-      </div>
-
-      <!-- Row 3: four equal cards -->
+      <!-- Row 2: four equal cards -->
       <div class="services__row services__row--3">
 
-        <div class="service-card service-card--white service-card--short">
-          <span class="service-card__number service-card__number--sm">07</span>
-          <span class="service-card__icon">⊕</span>
-          <h3 class="service-card__title service-card__title--sm">Гормональна терапія</h3>
-          <p class="service-card__desc">Підбір та контроль гормональної терапії</p>
-          <a href="#" class="service-card__link">Детальніше →</a>
+        <div
+          class="service-card service-card--cream service-card--short"
+          data-service
+          data-title="Лікування доброякісних захворювань молочної залози"
+          data-desc="Діагностика та лікування доброякісних змін молочної залози, консультації щодо профілактики."
+          data-points="Застій молока у годуючої жінки (лактостаз)|Онкологія в родині: чи варто турбуватися і з чого почати обстеження?|Безпечність імплантів молочних залоз та обстеження перед їх встановленням|Асиметрія молочних залоз: коли це стає порушенням?|Вплив гормонів на молочні залози: як безпечно почати прийом?"
+        >
+          <span class="service-card__number service-card__number--sm">04</span>
+          <span class="service-card__icon">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M12 3l7 3v6c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6l7-3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M9 12l2.2 2.2L15.5 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <h3 class="service-card__title service-card__title--sm">Доброякісні захворювання молочної залози</h3>
+          <p class="service-card__desc">Мастопатія, лактостаз та інші доброякісні зміни</p>
+          <button type="button" class="service-card__link" data-service-trigger>Детальніше →</button>
         </div>
 
-        <div class="service-card service-card--cream service-card--short">
-          <span class="service-card__number service-card__number--sm">08</span>
-          <span class="service-card__icon">✚</span>
-          <h3 class="service-card__title service-card__title--sm">Лікування ЗППП</h3>
-          <p class="service-card__desc">Сучасні протоколи діагностики та лікування</p>
-          <a href="#" class="service-card__link">Детальніше →</a>
+        <div
+          class="service-card service-card--white service-card--short"
+          data-service
+          data-title="Діагностика та лікування непліддя"
+          data-desc="Пошук причин труднощів із зачаттям та підбір індивідуального плану лікування."
+          data-points=""
+        >
+          <span class="service-card__number service-card__number--sm">05</span>
+          <span class="service-card__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="9.5" cy="12" r="6" stroke="currentColor" stroke-width="1.6"/>
+              <circle cx="14.5" cy="12" r="6" stroke="currentColor" stroke-width="1.6"/>
+            </svg>
+          </span>
+          <h3 class="service-card__title service-card__title--sm">Лікування непліддя</h3>
+          <p class="service-card__desc">Пошук причин та індивідуальний план лікування</p>
+          <button type="button" class="service-card__link" data-service-trigger>Детальніше →</button>
         </div>
 
-        <div class="service-card service-card--white service-card--short">
-          <span class="service-card__number service-card__number--sm">09</span>
-          <span class="service-card__icon">⊙</span>
-          <h3 class="service-card__title service-card__title--sm">Кольпоскопія</h3>
-          <p class="service-card__desc">Розширена кольпоскопія та прицільна біопсія</p>
-          <a href="#" class="service-card__link">Детальніше →</a>
-        </div>
-
-        <div class="service-card service-card--cream service-card--short">
-          <span class="service-card__number service-card__number--sm">10</span>
-          <span class="service-card__icon">◑</span>
+        <div
+          class="service-card service-card--cream service-card--short"
+          data-service
+          data-title="Контрацепція"
+          data-desc="Індивідуальний підбір контрацепції з урахуванням гормонального фону та способу життя."
+          data-points="Підбір методу контрацепції з урахуванням гормонального фону|Пропущений прийом контрацептивів: що робити?"
+        >
+          <span class="service-card__number service-card__number--sm">06</span>
+          <span class="service-card__icon">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M12 3l7 3v6c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6l7-3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            </svg>
+          </span>
           <h3 class="service-card__title service-card__title--sm">Контрацепція</h3>
-          <p class="service-card__desc">Підбір надійного та зручного методу</p>
-          <a href="#" class="service-card__link">Детальніше →</a>
+          <p class="service-card__desc">Підбір надійного методу з урахуванням вашого здоров'я</p>
+          <button type="button" class="service-card__link" data-service-trigger>Детальніше →</button>
+        </div>
+
+        <div
+          class="service-card service-card--white service-card--short"
+          data-service
+          data-title="Гормональна терапія"
+          data-desc="Гормональна терапія в будь-які періоди життя жінки, включно з менопаузою."
+          data-points="Підбір терапії з урахуванням гормонального фону|Супровід у будь-якому віці, зокрема в менопаузі|Контроль ефективності та корекція терапії"
+        >
+          <span class="service-card__number service-card__number--sm">07</span>
+          <span class="service-card__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M12 4v16M8 20h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M4 8h6M14 8h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M4 8l-2 4.5a3 3 0 0 0 6 0L4 8ZM20 8l-2 4.5a3 3 0 0 0 6 0L20 8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <h3 class="service-card__title service-card__title--sm">Гормональна терапія</h3>
+          <p class="service-card__desc">Підбір та контроль у будь-якому віці, зокрема в менопаузі</p>
+          <button type="button" class="service-card__link" data-service-trigger>Детальніше →</button>
         </div>
 
       </div>
 
     </div>
   </div>
+
+  <!-- Service detail modal -->
+  <div class="service-modal" id="service-modal" aria-hidden="true">
+    <div class="service-modal__backdrop" data-service-close></div>
+    <div class="service-modal__panel" role="dialog" aria-modal="true" aria-labelledby="service-modal-title">
+      <button type="button" class="service-modal__close" data-service-close aria-label="Закрити">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <h3 class="service-modal__title" id="service-modal-title"></h3>
+      <p class="service-modal__desc"></p>
+      <ul class="service-modal__list"></ul>
+      <a href="#consultation" class="service-modal__cta" data-service-close>Записатись на консультацію</a>
+    </div>
+  </div>
+
 </section>

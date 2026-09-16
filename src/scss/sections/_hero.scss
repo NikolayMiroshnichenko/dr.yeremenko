@@ -88,6 +88,14 @@
     }
   }
 
+  &__badges {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
   &__tag {
     display: inline-flex;
     align-items: center;
@@ -98,7 +106,21 @@
     font-weight: 600;
     font-size: 0.75rem;
     color: $color-accent;
-    margin-bottom: 24px;
+  }
+
+  &__location {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: $font-primary;
+    font-weight: 500;
+    font-size: 0.8125rem;
+    color: $color-text-medium;
+
+    svg {
+      color: $color-accent;
+      flex-shrink: 0;
+    }
   }
 
   &__title {

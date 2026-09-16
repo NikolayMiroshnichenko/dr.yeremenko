@@ -7,7 +7,7 @@
   overflow: hidden;
   display: flex;
   align-items: center;
-  background-color: $color-bg;
+  background-color: $color-bg-section;
 
   @include respond-to('desktop') {
     min-height: auto;
@@ -142,37 +142,6 @@
     @include respond-to('tablet') {
       font-size: 0.9375rem;
     }
-  }
-
-  &__list {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-bottom: 44px;
-  }
-
-  &__list-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: $font-primary;
-    font-weight: 500;
-    font-size: 0.9375rem;
-    color: $color-text-dark;
-  }
-
-  &__list-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background-color: $color-accent-light;
-    color: $color-accent;
-    font-size: 0.75rem;
-    font-weight: 700;
   }
 
   &__btn {

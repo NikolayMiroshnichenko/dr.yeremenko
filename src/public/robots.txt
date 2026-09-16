@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nikolaymiroshnichenko.github.io/dr.yeremenko/sitemap.xml
