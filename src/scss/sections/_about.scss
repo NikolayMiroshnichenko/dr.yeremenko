@@ -144,6 +144,27 @@
     }
   }
 
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  &__link {
+    font-family: $font-primary;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: $color-text-dark;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+      color: $color-accent;
+      border-bottom-color: $color-accent;
+    }
+  }
+
   &__btn {
     @include btn-base;
     padding: 17px 40px;

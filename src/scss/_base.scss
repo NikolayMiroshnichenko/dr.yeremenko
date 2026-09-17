@@ -22,3 +22,21 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.15;
   color: $color-text-dark;
 }
+
+// ─── Shared floating keyframes for decorative circles ─────────────────────────
+// Slightly different drift per variant so multiple circles on a page don't
+// move in lockstep.
+@keyframes float-a {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(6px, -18px); }
+}
+
+@keyframes float-b {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-8px, -14px); }
+}
+
+@keyframes float-c {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(4px, -22px); }
+}

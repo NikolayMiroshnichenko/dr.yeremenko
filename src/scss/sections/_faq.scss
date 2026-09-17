@@ -110,6 +110,7 @@
       top: 64px;
       right: 6%;
       opacity: 0.6;
+      animation: float-c 7s ease-in-out infinite;
 
       @include respond-to('desktop') {
         display: none;
@@ -123,10 +124,15 @@
       bottom: 48px;
       left: 4%;
       opacity: 0.45;
+      animation: float-b 9s ease-in-out infinite 1s;
 
       @include respond-to('desktop') {
         display: none;
       }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
     }
   }
 }

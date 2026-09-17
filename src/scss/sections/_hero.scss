@@ -220,7 +220,7 @@
     }
   }
 
-  // Decorative circles
+  // Decorative circles — gently float to keep the page feeling alive
   &__deco {
     position: absolute;
     border-radius: 50%;
@@ -234,6 +234,7 @@
       left: calc(50% - 16px);
       opacity: 0.6;
       z-index: 2;
+      animation: float-a 6s ease-in-out infinite;
 
       @include respond-to('desktop') {
         display: none;
@@ -248,10 +249,15 @@
       left: calc(50% - 112px);
       opacity: 0.5;
       z-index: 0;
+      animation: float-b 8s ease-in-out infinite 0.5s;
 
       @include respond-to('desktop') {
         display: none;
       }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
     }
   }
 }
