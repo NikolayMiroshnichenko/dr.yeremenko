@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build --base=/",
+    "build:pages": "vite build --base=/dr.yeremenko/",
     "preview": "vite preview"
   },
   "devDependencies": {
