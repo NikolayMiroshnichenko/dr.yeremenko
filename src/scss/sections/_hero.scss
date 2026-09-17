@@ -48,6 +48,10 @@
       height: 260px;
     }
 
+    @include respond-to('tablet') {
+      border-radius: 0 0 16px 16px;
+    }
+
   }
 
   &__photo-img {

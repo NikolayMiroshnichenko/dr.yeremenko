@@ -83,6 +83,17 @@
     }
   }
 
+  &__link {
+    color: $color-accent;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+
+    &:hover {
+      border-bottom-color: $color-accent;
+    }
+  }
+
   // ─── Arrow controls ──────────────────────────────────────────────────────
   &__arrows {
     display: flex;
@@ -182,10 +193,11 @@
 .review-card {
   position: relative;
   height: 100%;
+  display: flex;
+  flex-direction: column;
   background-color: $color-white;
   border-radius: 20px;
   padding: 32px 28px 28px;
-  cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 
   &:hover {
@@ -193,48 +205,16 @@
     box-shadow: 0 12px 28px rgba($color-text-dark, 0.1);
   }
 
-  &:hover &__zoom {
-    background-color: $color-accent;
-    color: $color-white;
-  }
-
-  &__zoom {
-    position: absolute;
-    top: 18px;
-    right: 18px;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background-color: $color-accent-light;
-    color: $color-accent;
-    @include flex-center;
-    transition: background-color 0.2s ease, color 0.2s ease;
-
-    svg {
-      width: 16px;
-      height: 16px;
-    }
-  }
-
   &__top {
     display: flex;
     align-items: center;
-    gap: 14px;
-    padding-right: 40px;
-    margin-bottom: 18px;
+    gap: 8px;
+    margin-bottom: 14px;
   }
 
-  &__avatar {
+  &__ig-icon {
     flex-shrink: 0;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background-color: $color-accent-light;
     color: $color-accent;
-    font-family: $font-primary;
-    font-weight: 700;
-    font-size: 0.9375rem;
-    @include flex-center;
   }
 
   &__name {
@@ -242,14 +222,6 @@
     font-weight: 700;
     font-size: 0.9375rem;
     color: $color-text-dark;
-    margin-bottom: 4px;
-  }
-
-  &__stars {
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-    color: $color-accent;
-    line-height: 1;
   }
 
   &__text {
@@ -258,15 +230,97 @@
     font-size: 0.9375rem;
     line-height: 1.65;
     color: $color-text-medium;
-    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    line-clamp: 6;
+    overflow: hidden;
+    min-height: calc(1.65em * 6);
   }
 
-  &__hint {
-    display: inline-flex;
-    align-items: center;
+  &__more {
+    align-self: flex-start;
+    margin-top: 12px;
     font-family: $font-primary;
     font-weight: 600;
-    font-size: 0.75rem;
+    font-size: 0.8125rem;
     color: $color-accent;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    visibility: hidden;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &--has-more &__more {
+    visibility: visible;
+  }
+}
+
+// ─── Review modal (full text) ─────────────────────────────────────────────
+.review-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  &.is-open {
+    display: flex;
+  }
+
+  &__backdrop {
+    position: absolute;
+    inset: 0;
+    background-color: rgba($color-text-dark, 0.5);
+  }
+
+  &__dialog {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 480px;
+    max-height: 80vh;
+    overflow-y: auto;
+    background-color: $color-white;
+    border-radius: 20px;
+    padding: 32px 28px 28px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background-color: $color-accent-light;
+    color: $color-accent;
+    cursor: pointer;
+    @include flex-center;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    padding-right: 32px;
+  }
+
+  &__text {
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: $color-text-medium;
+    white-space: pre-line;
   }
 }
