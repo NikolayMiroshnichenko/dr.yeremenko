@@ -155,12 +155,24 @@
 
   &__btn {
     @include btn-base;
-    padding: 17px 40px;
+    height: 56px;
+    padding: 0 40px;
     background-color: $color-accent;
     color: $color-white;
     font-size: 0.9375rem;
     border-radius: 50px;
     box-shadow: 0 8px 20px rgba($color-accent, 0.25);
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+
+    @include respond-to('mobile') {
+      flex-wrap: nowrap;
+    }
   }
 
   // Decorative circles

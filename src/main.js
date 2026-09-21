@@ -5,5 +5,6 @@ import './js/faq.js';
 import './js/year.js';
 import './js/reviews-slider.js';
 import './js/services-modal.js';
+import './js/certificates-lightbox.js';
 import './js/header-menu.js';
 import './js/symptoms-reveal.js';

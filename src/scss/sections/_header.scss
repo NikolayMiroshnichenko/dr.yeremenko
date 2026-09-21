@@ -34,16 +34,19 @@
   }
 
   &__nav {
-    @include respond-to('tablet') {
+    @media (max-width: $bp-header-nav) {
       position: fixed;
       top: 80px;
-      left: 0;
+      left: auto;
       right: 0;
       bottom: 0;
+      width: 375px;
+      max-width: 100%;
       z-index: 90;
       display: flex;
       flex-direction: column;
       background-color: $color-bg;
+      box-shadow: -8px 0 32px rgba($color-text-dark, 0.12);
       overflow-y: auto;
       transform: translateX(100%);
       transition: transform 0.35s ease;
@@ -51,8 +54,30 @@
   }
 
   &.is-nav-open &__nav {
-    @include respond-to('tablet') {
+    @media (max-width: $bp-header-nav) {
       transform: translateX(0);
+    }
+  }
+
+  &__nav-backdrop {
+    display: none;
+
+    @media (max-width: $bp-header-nav) {
+      display: block;
+      position: fixed;
+      inset: 80px 0 0 0;
+      z-index: 89;
+      background-color: rgba($color-text-dark, 0.4);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+    }
+  }
+
+  &.is-nav-open &__nav-backdrop {
+    @media (max-width: $bp-header-nav) {
+      opacity: 1;
+      visibility: visible;
     }
   }
 
@@ -61,7 +86,7 @@
     align-items: center;
     gap: 40px;
 
-    @include respond-to('tablet') {
+    @media (max-width: $bp-header-nav) {
       flex: 1;
       flex-direction: column;
       align-items: stretch;
@@ -72,6 +97,9 @@
   }
 
   &__nav-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
     font-family: $font-primary;
     font-weight: 600;
     font-size: 0.875rem;
@@ -82,8 +110,7 @@
       color: $color-accent;
     }
 
-    @include respond-to('tablet') {
-      display: block;
+    @media (max-width: $bp-header-nav) {
       padding: 16px 0;
       font-size: 1.125rem;
       color: $color-text-dark;
@@ -92,15 +119,166 @@
   }
 
   &__nav-list li:last-child &__nav-link {
-    @include respond-to('tablet') {
+    @media (max-width: $bp-header-nav) {
       border-bottom: none;
+    }
+  }
+
+  &__nav-item {
+    &.has-dropdown {
+      @media (max-width: $bp-header-nav) {
+        border-bottom: 1px solid $color-divider;
+      }
+    }
+
+    &.has-dropdown .header__nav-link {
+      @media (max-width: $bp-header-nav) {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &__nav-trigger {
+    appearance: none;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-align: left;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+
+    &:focus-visible {
+      outline: 2px solid $color-accent;
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    @media (max-width: $bp-header-nav) {
+      width: 100%;
+      justify-content: space-between;
+      padding: 16px 0;
+    }
+  }
+
+  &__nav-caret {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+
+    @media (max-width: $bp-header-nav) {
+      transition: none;
+    }
+  }
+
+  // ─── Dropdown ───────────────────────────────────────────────────────────
+  // Opens on click via .is-open (toggled in JS) — works the same on touch
+  // and mouse, so tapping the trigger never navigates away by accident.
+  // Hover is layered on top only for devices that truly support it.
+  &__nav-item.has-dropdown {
+    position: relative;
+    // Bridges the visual gap between the trigger and the flyout below it
+    // so the pointer stays "inside" the item while crossing that gap —
+    // without this, moving the mouse down too slowly loses :hover and the
+    // dropdown closes before it's reached. Padding/margin cancel out, so
+    // it has no effect on layout. Only needed for the desktop hover flyout —
+    // mobile opens the dropdown inline via tap, no gap to bridge.
+    @media (hover: hover) and (pointer: fine) {
+      padding-bottom: 14px;
+      margin-bottom: -14px;
+    }
+
+    &.is-open .header__nav-caret {
+      transform: rotate(180deg);
+    }
+
+    &.is-open .header__dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+
+      @media (max-width: $bp-header-nav) {
+        display: block;
+        transform: none;
+      }
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover .header__nav-caret {
+        transform: rotate(180deg);
+      }
+
+      &:hover .header__dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+      }
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    min-width: 180px;
+    padding: 8px 0;
+    background-color: $color-white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 28px rgba($color-text-dark, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(6px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+
+    @media (max-width: $bp-header-nav) {
+      position: static;
+      left: auto;
+      min-width: 0;
+      padding: 0 0 4px 16px;
+      background-color: transparent;
+      box-shadow: none;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      transition: none;
+      display: none;
+    }
+  }
+
+  &__dropdown-link {
+    display: block;
+    text-align: center;
+    font-family: $font-primary;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: $color-text-medium;
+    padding: 10px 12px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+
+    &:hover {
+      color: $color-white;
+      background-color: $color-accent;
+    }
+
+    @media (max-width: $bp-header-nav) {
+      text-align: left;
+      padding: 10px 0;
+      font-size: 1rem;
+      color: $color-text-medium;
+      transition: none;
+      -webkit-tap-highlight-color: transparent;
+
+      &:hover {
+        color: $color-text-medium;
+        background-color: transparent;
+      }
     }
   }
 
   &__nav-cta {
     display: none;
 
-    @include respond-to('tablet') {
+    @media (max-width: $bp-header-nav) {
       @include btn-base;
       display: flex;
       flex-shrink: 0;
@@ -118,7 +296,7 @@
   &__nav-social {
     display: none;
 
-    @include respond-to('tablet') {
+    @media (max-width: $bp-header-nav) {
       display: flex;
       flex-shrink: 0;
       align-items: center;
@@ -151,7 +329,7 @@
     font-size: 0.8125rem;
     border-radius: 50px;
 
-    @include respond-to('tablet') {
+    @media (max-width: $bp-header-nav) {
       display: none;
     }
   }
@@ -166,7 +344,7 @@
     background: none;
     border: none;
 
-    @include respond-to('tablet') {
+    @media (max-width: $bp-header-nav) {
       display: flex;
     }
 

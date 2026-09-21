@@ -21,6 +21,10 @@ $bp-tablet:  768px;
 $bp-desktop: 1024px;
 $bp-wide:    1280px;
 
+// Header nav needs its own, wider cutover to the burger menu: logo + full
+// nav list + dropdown + CTA button no longer fit side by side below this.
+$bp-header-nav: 1240px;
+
 // ─── Container ────────────────────────────────────────────────────────────────
 $container-padding-desktop: 100px;
 $container-padding-tablet:  40px;

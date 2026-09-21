@@ -8,7 +8,19 @@
 
       <nav class="header__nav" id="header-nav" aria-label="Основна навігація">
         <ul class="header__nav-list">
-          <li><a href="doctor.html" class="header__nav-link">Про лікаря</a></li>
+          <li class="header__nav-item has-dropdown" data-dropdown>
+            <button type="button" class="header__nav-link header__nav-trigger" data-dropdown-trigger aria-expanded="false">
+              Про лікаря
+              <svg class="header__nav-caret" width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul class="header__dropdown">
+              <li><a href="doctor.html" class="header__dropdown-link">Про лікаря</a></li>
+              <li><a href="certificates.html" class="header__dropdown-link">Сертифікати</a></li>
+              <li><a href="videos.html" class="header__dropdown-link">Відео</a></li>
+            </ul>
+          </li>
           <li><a href="index.html#symptoms" class="header__nav-link">Симптоми</a></li>
           <li><a href="index.html#services" class="header__nav-link">Послуги</a></li>
           <li><a href="index.html#consultation" class="header__nav-link">Онлайн консультація</a></li>
@@ -46,6 +58,8 @@
           -->
         </div>
       </nav>
+
+      <div class="header__nav-backdrop" id="header-nav-backdrop" aria-hidden="true"></div>
 
       <a href="https://t.me/+380503252067" class="header__cta" target="_blank" rel="noopener noreferrer">Записатись</a>
 
