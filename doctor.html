@@ -34,8 +34,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
     <script type="module" crossorigin src="/dr.yeremenko/assets/vendor-QdaiBVd5.js"></script>
-    <script type="module" crossorigin src="/dr.yeremenko/assets/main-D-dBpUiS.js"></script>
-    <link rel="stylesheet" crossorigin href="/dr.yeremenko/assets/main-D8e1dWtc.css">
+    <script type="module" crossorigin src="/dr.yeremenko/assets/main-mLlq9YQ0.js"></script>
+    <link rel="stylesheet" crossorigin href="/dr.yeremenko/assets/main-DQejujIm.css">
     <link rel="stylesheet" crossorigin href="/dr.yeremenko/assets/vendor-Cq8LIkOh.css">
   </head>
   <body>
@@ -50,7 +50,19 @@
 
       <nav class="header__nav" id="header-nav" aria-label="Основна навігація">
         <ul class="header__nav-list">
-          <li><a href="doctor.html" class="header__nav-link">Про лікаря</a></li>
+          <li class="header__nav-item has-dropdown" data-dropdown>
+            <button type="button" class="header__nav-link header__nav-trigger" data-dropdown-trigger aria-expanded="false">
+              Про лікаря
+              <svg class="header__nav-caret" width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul class="header__dropdown">
+              <li><a href="doctor.html" class="header__dropdown-link">Про лікаря</a></li>
+              <li><a href="certificates.html" class="header__dropdown-link">Сертифікати</a></li>
+              <li><a href="videos.html" class="header__dropdown-link">Відео</a></li>
+            </ul>
+          </li>
           <li><a href="index.html#symptoms" class="header__nav-link">Симптоми</a></li>
           <li><a href="index.html#services" class="header__nav-link">Послуги</a></li>
           <li><a href="index.html#consultation" class="header__nav-link">Онлайн консультація</a></li>
@@ -89,6 +101,8 @@
         </div>
       </nav>
 
+      <div class="header__nav-backdrop" id="header-nav-backdrop" aria-hidden="true"></div>
+
       <a href="https://t.me/+380503252067" class="header__cta" target="_blank" rel="noopener noreferrer">Записатись</a>
 
       <button
@@ -126,10 +140,17 @@
       <span class="doctor-intro__divider"></span>
 
       <p class="doctor-intro__desc">
-        Понад 25 років практики: від акушера-гінеколога до завідувачки Центром планування сім'ї у Чернігові. Сьогодні приймаю у медичному центрі «АКСІОМА» та онлайн — для жінок з усієї України і за кордоном.
+        Понад 25 років практики: від акушера-гінеколога до завідувачки Центром планування сім'ї у Чернігові. Сьогодні приймаю у медичних центрах «АКСІОМА» та «СімМед» і онлайн — для жінок з усієї України і за кордоном.
       </p>
 
-      <a href="https://t.me/+380503252067" class="doctor-intro__btn" target="_blank" rel="noopener noreferrer">Записатись на прийом</a>
+      <div class="doctor-intro__actions">
+        <a href="https://t.me/+380503252067" class="doctor-intro__btn" target="_blank" rel="noopener noreferrer">Записатись на прийом</a>
+        <a href="videos.html" class="video-teaser" aria-label="Відео" title="Відео">
+          <span class="video-teaser__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8 5.14v13.72c0 .8.87 1.29 1.55.87l10.7-6.86a1 1 0 0 0 0-1.74L9.55 4.27C8.87 3.85 8 4.34 8 5.14Z"/></svg>
+          </span>
+        </a>
+      </div>
     </div>
   </div>
 
@@ -159,7 +180,7 @@
       <li class="doctor-story__item doctor-story__item--right">
         <div class="doctor-story__content">
           <span class="doctor-story__stage">2003–2022 — Центр планування сім'ї</span>
-          <p class="doctor-story__text">19 років у Центрі планування сім'ї — спочатку в Кременчуці, потім у Чернігові, де з 2019 року очолювала заклад: управлінський досвід і відповідальність за команду та результат для сотень пацієнток щороку.</p>
+          <p class="doctor-story__text">19 років у Центрі планування сім'ї — спочатку в Кременчуці, потім у Чернігові, де з 2019 року була завідувачкою Центру планування сім'ї: управлінський досвід і відповідальність за команду та результат для сотень пацієнток щороку.</p>
         </div>
       </li>
 
@@ -172,8 +193,8 @@
 
       <li class="doctor-story__item doctor-story__item--right doctor-story__item--current">
         <div class="doctor-story__content">
-          <span class="doctor-story__stage">2023 — сьогодні: «АКСІОМА» та онлайн</span>
-          <p class="doctor-story__text">Приймаю як акушер-гінеколог, мамолог, репродуктолог і лікар УЗД у медичному центрі «АКСІОМА» в Чернігові та онлайн — для жінок з усієї України і за кордоном.</p>
+          <span class="doctor-story__stage">2023 — сьогодні: «АКСІОМА», «СімМед» та онлайн</span>
+          <p class="doctor-story__text">Приймаю як акушер-гінеколог, мамолог, репродуктолог і лікар УЗД у медичних центрах «АКСІОМА» та «СімМед» в Чернігові та онлайн — для жінок з усієї України і за кордоном.</p>
         </div>
       </li>
     </ul>
@@ -370,6 +391,12 @@
 
           <div class="credentials__timeline-item">
             <span class="credentials__timeline-dot"></span>
+            <span class="credentials__timeline-year">2011 — тепер</span>
+            <p class="credentials__timeline-text">Лікар акушер-гінеколог, мамолог, УЗД-фахівець, медичний центр «СімМед», м. Чернігів</p>
+          </div>
+
+          <div class="credentials__timeline-item">
+            <span class="credentials__timeline-dot"></span>
             <span class="credentials__timeline-year">2019–2022</span>
             <p class="credentials__timeline-text">Завідувачка Центру планування сім'ї, м. Чернігів</p>
           </div>
@@ -423,6 +450,96 @@
   </div>
 </section>
 
+      <section class="certs-preview" id="certificates">
+  <div class="container">
+
+    <div class="certs-preview__head">
+      <span class="certs-preview__label">Досягнення</span>
+      <h2 class="certs-preview__title">Сертифікати та підвищення кваліфікації</h2>
+      <span class="certs-preview__divider"></span>
+      <p class="certs-preview__desc">
+        Понад 25 років навчання не зупиняється — курси, конференції та тренінги в Україні та за кордоном, що підтверджують кваліфікацію.
+      </p>
+    </div>
+
+    <div class="certs-preview__grid">
+      <button type="button" class="cert-tile" data-cert-trigger data-full="img/certificates/full/cert-01.jpg" data-index="0" aria-label="Відкрити сертифікат у повному розмірі">
+        <img src="/dr.yeremenko/assets/cert-01-DQzxHKBS.jpg" alt="Сертифікат Ольги Єременко — Bayer HealthCare" loading="lazy">
+        <span class="cert-tile__zoom" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+      </button>
+      <button type="button" class="cert-tile" data-cert-trigger data-full="img/certificates/full/cert-33.jpg" data-index="1" aria-label="Відкрити сертифікат у повному розмірі">
+        <img src="/dr.yeremenko/assets/cert-33-BBds9bEQ.jpg" alt="Сертифікат Ольги Єременко — міжнародний конгрес" loading="lazy">
+        <span class="cert-tile__zoom" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+      </button>
+      <button type="button" class="cert-tile" data-cert-trigger data-full="img/certificates/full/cert-37.jpg" data-index="2" aria-label="Відкрити сертифікат у повному розмірі">
+        <img src="/dr.yeremenko/assets/cert-37-DjMi32Iy.jpg" alt="Сертифікат Ольги Єременко — конференція" loading="lazy">
+        <span class="cert-tile__zoom" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+      </button>
+      <button type="button" class="cert-tile" data-cert-trigger data-full="img/certificates/full/cert-39.jpg" data-index="3" aria-label="Відкрити сертифікат у повному розмірі">
+        <img src="/dr.yeremenko/assets/cert-39-Deum_D-4.jpg" alt="Сертифікат Ольги Єременко — Ian Donald University School" loading="lazy">
+        <span class="cert-tile__zoom" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+      </button>
+      <button type="button" class="cert-tile" data-cert-trigger data-full="img/certificates/full/cert-40.jpg" data-index="4" aria-label="Відкрити сертифікат у повному розмірі">
+        <img src="/dr.yeremenko/assets/cert-40-C2a_V28P.jpg" alt="Сертифікат Ольги Єременко — професійний розвиток лікаря" loading="lazy">
+        <span class="cert-tile__zoom" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+      </button>
+      <button type="button" class="cert-tile" data-cert-trigger data-full="img/certificates/full/cert-41.jpg" data-index="5" aria-label="Відкрити сертифікат у повному розмірі">
+        <img src="/dr.yeremenko/assets/cert-41-DZvJtL7i.jpg" alt="Сертифікат Ольги Єременко — Гармонія гормонів" loading="lazy">
+        <span class="cert-tile__zoom" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+      </button>
+    </div>
+
+    <div class="certs-preview__footer">
+      <a href="certificates.html" class="certs-preview__btn">
+        Переглянути всі сертифікати
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Certificate lightbox -->
+  <div class="cert-modal" id="cert-modal" aria-hidden="true">
+    <div class="cert-modal__backdrop" data-cert-close></div>
+    <div class="cert-modal__inner">
+      <button type="button" class="cert-modal__close" data-cert-close aria-label="Закрити">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <button type="button" class="cert-modal__nav cert-modal__nav--prev" data-cert-prev aria-label="Попередній сертифікат">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="cert-modal__figure">
+        <img src="" alt="Сертифікат у повному розмірі" class="cert-modal__img" id="cert-modal-img">
+        <span class="cert-modal__counter" id="cert-modal-counter"></span>
+      </div>
+      <button type="button" class="cert-modal__nav cert-modal__nav--next" data-cert-next aria-label="Наступний сертифікат">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+</section>
+
     </main>
 
     <footer class="footer" id="contacts">
@@ -445,6 +562,8 @@
         <ul class="footer__nav-list">
           <li><a href="doctor.html" class="footer__nav-link">Про лікаря</a></li>
           <li><a href="index.html#services" class="footer__nav-link">Послуги</a></li>
+          <li><a href="certificates.html" class="footer__nav-link">Сертифікати</a></li>
+          <li><a href="videos.html" class="footer__nav-link">Відео</a></li>
           <li><a href="index.html#reviews" class="footer__nav-link">Відгуки</a></li>
           <li><a href="#contacts" class="footer__nav-link">Контакти</a></li>
         </ul>
